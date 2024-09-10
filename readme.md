@@ -2,9 +2,22 @@
 
 Node version: 16.16.0
 
+Crear proyecto:
 ```
 $ jhipster import-jdl .\library.jh
 ```
+
+```
+# Inicar
+$ npm run start:dev
+
+# Test Backend
+mvn test
+
+# Test Frontend
+npm run test
+```
+
 
 # 02-elk-docker
 ## Actualizar credenciales
