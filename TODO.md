@@ -1,6 +1,6 @@
 [x] Crear una aplicación en JHipster basado en un modelo de clases jdl.
 
-[ ] Crear dos test de unidad.
+[x] Crear dos test de unidad. R: Test en AdminUserDTOTest y UserDTOTest.
 
 [ ] Crear tres test E2E en Cypress. Algunos de los test deberán hacer el login utilanzo la API y para luego probar alguna funcionalidad.
 

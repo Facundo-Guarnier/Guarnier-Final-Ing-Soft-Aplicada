@@ -15,7 +15,7 @@ $ npm run start:dev
 mvn test
 
 # Test Frontend
-npm run test
+$ npm run test
 ```
 
 
