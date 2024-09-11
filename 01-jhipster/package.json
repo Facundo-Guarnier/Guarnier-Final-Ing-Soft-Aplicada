@@ -5,7 +5,6 @@
   "description": "Description for library",
   "license": "UNLICENSED",
   "scripts": {
-    "app:start": "./mvnw",
     "backend:build-cache": "./mvnw dependency:go-offline",
     "backend:debug": "./mvnw -Dspring-boot.run.jvmArguments=\"-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000\"",
     "backend:doc:test": "./mvnw -ntp javadoc:javadoc --batch-mode",
@@ -64,7 +63,8 @@
     "prettier:format": "prettier --write \"{,src/**/,webpack/,.blueprint/**/}*.{md,json,yml,html,cjs,mjs,js,ts,tsx,css,scss,java}\"",
     "serve": "npm run start --",
     "start": "ng serve --hmr",
-    "start:dev": "mvnw.cmd",
+    "start:win": "mvnw.cmd",
+    "start:lin": "./mvnw",
     "start-tls": "npm run webapp:dev-ssl",
     "pretest": "npm run lint",
     "test": "ng test --coverage --log-heap-usage -w=2",
