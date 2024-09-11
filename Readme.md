@@ -22,7 +22,13 @@ Crear una aplicación donde se apliquen los conceptos aprendidos durante el curs
   <img src="https://cdn.simpleicons.org/jhipster/326690" alt="JHipster Logo" width="80">
 </div>
 
-Node version: 16.16.0
+### Dependencias:
+
+* Node version: 16.16.0
+* Java: ```$ sudo apt install openjdk-17-jre-headless```
+* Cypres: ```$ sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb```
+
+### Comandos:
 
 ```bash
 # Crear proyecto
@@ -35,10 +41,13 @@ $ npm run start:win
 $ npm run start:lin
 
 # Test Backend
-mvn test
+$ mvn test
 
 # Test Frontend
 $ npm run test
+
+# Test e2e
+$ npm run cypress
 ```
 
 
@@ -47,7 +56,12 @@ $ npm run test
     <img src="https://cdn.simpleicons.org/elastic/005571" alt="ELK Logo" width="80">
 </div>
 
+### Dependencias:
+
+* Docker
+
 ### Actualizar credenciales
+
 Ejecutar los siguientes 2 comandos. El primero quedará dando error, entonces en la segunda terminar se ejecuta el segundo comando.
 
 ```bash
@@ -65,7 +79,11 @@ Web App: ```http://localhost:5601```
     <img src="https://cdn.simpleicons.org/ionic/3880FF" alt="Ionic Logo" width="80">
 </div>
 
-Node version: <18.16.0
+### Dependencias:
+
+* Node version: > 18.16.0
+
+### Comandos:
 
 ```bash
 # Inciar
