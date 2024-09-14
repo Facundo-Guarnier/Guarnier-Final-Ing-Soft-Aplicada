@@ -1,21 +1,15 @@
 package guarnier.um.web.rest;
 
-import guarnier.um.config.Constants;
-import guarnier.um.domain.User;
-import guarnier.um.repository.UserRepository;
-import guarnier.um.security.AuthoritiesConstants;
-import guarnier.um.service.MailService;
-import guarnier.um.service.UserService;
-import guarnier.um.service.dto.AdminUserDTO;
-import guarnier.um.web.rest.errors.BadRequestAlertException;
-import guarnier.um.web.rest.errors.EmailAlreadyUsedException;
-import guarnier.um.web.rest.errors.LoginAlreadyUsedException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,8 +20,26 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import guarnier.um.config.Constants;
+import guarnier.um.domain.User;
+import guarnier.um.repository.UserRepository;
+import guarnier.um.security.AuthoritiesConstants;
+import guarnier.um.service.MailService;
+import guarnier.um.service.UserService;
+import guarnier.um.service.dto.AdminUserDTO;
+import guarnier.um.web.rest.errors.BadRequestAlertException;
+import guarnier.um.web.rest.errors.EmailAlreadyUsedException;
+import guarnier.um.web.rest.errors.LoginAlreadyUsedException;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
@@ -164,13 +176,27 @@ public class UserResource {
     @GetMapping("/users")
     @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<List<AdminUserDTO>> getAllUsers(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
-        log.debug("REST request to get all User for an admin");
+        //! Log 1
+        log.debug("LOG EN GET ALL USERS, USUARIO : " + userService.getUserWithAuthorities().get().getLogin());
+
         if (!onlyContainsAllowedProperties(pageable)) {
             return ResponseEntity.badRequest().build();
         }
 
         final Page<AdminUserDTO> page = userService.getAllManagedUsers(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+
+        //! Log 2
+        StringBuilder resultado = new StringBuilder("\n\n\n\nUsuarios:\n");
+        for (AdminUserDTO usuario : page.getContent()) {
+                resultado
+                    .append("Login: ").append(usuario.getLogin())
+                    .append(", Email: ").append(usuario.getEmail()).append("\n");
+            }
+        resultado.append("\n\n\n\n");
+        log.debug(resultado.toString());
+        System.out.println(resultado.toString());
+
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
