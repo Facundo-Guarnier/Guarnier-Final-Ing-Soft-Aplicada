@@ -27,6 +27,9 @@ Crear una aplicación donde se apliquen los conceptos aprendidos durante el curs
 * Node version: 16.16.0
 * Java: ```$ sudo apt install openjdk-17-jre-headless```
 * Cypres: ```$ sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb```
+* Maven: ```$ sudo apt install maven``
+* Yeoman: ```$ npm install -g yo```
+* JHipster: ```$ npm install -g generator-jhipster```
 
 ### Comandos:
 
