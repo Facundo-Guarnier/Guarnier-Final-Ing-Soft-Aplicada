@@ -23,7 +23,7 @@ describe('Limpiar SessionStorage', () => {
     it('debe aparecer un cartel por las credenciales incorrectas', () => {
       cy.clickOnLoginItem();
       cy.get(usernameLoginSelector).click().type('admin');
-      cy.get(passwordLoginSelector).type('pepe');
+      cy.get(passwordLoginSelector).type('123');
       cy.get(submitLoginSelector).click();
       cy.contains('Failed to sign in! Please check your credentials and try again.').should('be.visible');
     });
@@ -48,9 +48,9 @@ describe('Limpiar SessionStorage', () => {
     it('crear autor', () => {
       cy.clickOnEntityMenuItem('author');
       cy.get(entityCreateButtonSelector).click();
-      cy.get(`[data-cy="firstName"]`).type('Martin').should('have.value', 'Martin');
+      cy.get(`[data-cy="firstName"]`).type('Usuario1').should('have.value', 'Usuario1');
 
-      cy.get(`[data-cy="lastName"]`).type('Reyes').should('have.value', 'Reyes');
+      cy.get(`[data-cy="lastName"]`).type('Apellido1').should('have.value', 'Apellido1');
 
       cy.get(entityCreateSaveButtonSelector).click();
 
