@@ -176,6 +176,7 @@ public class UserResource {
     @GetMapping("/users")
     @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<List<AdminUserDTO>> getAllUsers(@org.springdoc.api.annotations.ParameterObject Pageable pageable) {
+        //T* LOGS
         //! Log 1
         log.debug("LOG EN GET ALL USERS, USUARIO : " + userService.getUserWithAuthorities().get().getLogin());
 
@@ -194,8 +195,7 @@ public class UserResource {
                     .append(", Email: ").append(usuario.getEmail()).append("\n");
             }
         resultado.append("\n\n\n\n");
-        log.debug(resultado.toString());
-        System.out.println(resultado.toString());
+        log.debug("LOG EN GET ALL USERS: ", resultado.toString());
 
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

@@ -1,12 +1,14 @@
 [x] Crear una aplicación en JHipster basado en un modelo de clases jdl.
 
-[x] Crear dos test de unidad. R: Test en AdminUserDTOTest y UserDTOTest.
+[x] Crear dos test de unidad. 
+    R: Test en AdminUserDTOTest y UserDTOTest.
 
 [ ] Crear tres test E2E en Cypress. Algunos de los test deberán hacer el login utilanzo la API y para luego probar alguna funcionalidad.
 
 [ ] Hacer un deploy en docker.
 
-[ ] Implementar un servidor de logs (ELK) que tome los logs en docker.
+[x] Implementar un servidor de logs (ELK) que tome los logs en docker.
+    R: 01-jhipster\src\main\java\guarnier\um\web\rest\UserResource.java -> getAllUsers
 
 [ ] Crear una aplicación progresiva en ionic que consuma una API del proyecto JHipste. 
 
