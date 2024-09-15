@@ -10,7 +10,7 @@
 [x] Implementar un servidor de logs (ELK) que tome los logs en docker.
     R: 01-jhipster\src\main\java\guarnier\um\web\rest\UserResource.java -> getAllUsers
 
-[ ] Crear una aplicación progresiva en ionic que consuma una API del proyecto JHipste. 
+[x] Crear una aplicación progresiva en ionic que consuma una API del proyecto JHipste. 
 
 [ ] Convertir la aplicación Ionic en PWA permitiendo que pueda funcionar sin conexión.
 
