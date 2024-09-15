@@ -14,14 +14,49 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-grid *ngIf="folder === 'mi-perfil'">
+    <ion-row>
+      <ion-col>Clave</ion-col>
+      <ion-col>Valor</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Login:</ion-col>
+      <ion-col>{{ mi_data.login }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Email:</ion-col>
+      <ion-col>{{ mi_data.email }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Nombre:</ion-col>
+      <ion-col>{{ mi_data.firstName }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Atributos:</ion-col>
+      <ion-col>{{ mi_data.authorities }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+
   <ion-grid *ngIf="folder === 'usuarios'">
     <ion-row>
       <ion-col>Usuario</ion-col>
       <ion-col>Email</ion-col>
     </ion-row>
     <ion-row *ngFor="let user of users">
-      <ion-col>{{ user.name }}</ion-col>
+      <ion-col>{{ user.login }}</ion-col>
       <ion-col>{{ user.email }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="folder === 'autores'">
+    <ion-row>
+      <ion-col>Nombre</ion-col>
+      <ion-col>Apellido</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let author of authors">
+      <ion-col>{{ author.firstName }}</ion-col>
+      <ion-col>{{ author.lastName }}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

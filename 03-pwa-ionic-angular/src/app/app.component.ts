@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Mi Perfil', url: '/folder/mi-perfil', icon: 'person' },
+    { title: 'Mi Perfil', url: '/folder/mi-perfil', icon: 'person-circle' },
     { title: 'Usuarios', url: '/folder/usuarios', icon: 'people' },
-    { title: 'Autores', url: '/folder/autores', icon: 'person-circle' },
+    { title: 'Autores', url: '/folder/autores', icon: 'people' },
   ];
   constructor(
     // private authService: AuthService

@@ -2,8 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 interface User {
-  name: string;
+  login: string;
   email: string;
+}
+interface Authors {
+  firstName: string;
+  lastName: string;
 }
 
 @Component({
@@ -14,6 +18,8 @@ interface User {
 export class FolderPage implements OnInit {
   public folder!: string;
   public users: User[] = [];
+  public authors: Authors[] = [];
+  public mi_data: any = {};
   private activatedRoute = inject(ActivatedRoute);
 
   constructor() {}
@@ -42,10 +48,10 @@ export class FolderPage implements OnInit {
       // }]
 
       this.users = [
-        { name: 'Usuario 1', email: 'usuario1@ejemplo.com' },
-        { name: 'Usuario 2', email: 'usuario2@ejemplo.com' },
-        { name: 'Usuario 3', email: 'usuario3@ejemplo.com' },
-        { name: 'Usuario 4', email: 'usuario4@ejemplo.com' },
+        { login: 'Usuario 1', email: 'usuario1@ejemplo.com' },
+        { login: 'Usuario 2', email: 'usuario2@ejemplo.com' },
+        { login: 'Usuario 3', email: 'usuario3@ejemplo.com' },
+        { login: 'Usuario 4', email: 'usuario4@ejemplo.com' },
       ];
     }
     if (this.folder === 'autores') {
@@ -57,6 +63,13 @@ export class FolderPage implements OnInit {
     //   }, {
     //     ...
     //   } ]
+      
+        this.authors = [
+          { firstName: 'Chelsie', lastName: 'Thompson' },
+          { firstName: 'Derrick', lastName: 'Garza' },
+          { firstName: 'Hilda', lastName: 'Gibson' },
+          { firstName: 'Lena', lastName: 'Horton' },
+        ];
     }
 
     if (this.folder === 'mi-perfil') {
@@ -76,6 +89,14 @@ export class FolderPage implements OnInit {
       //   "lastModifiedDate" : null,
       //   "authorities" : [ "ROLE_USER", "ROLE_ADMIN" ]
       // }
+
+      this.mi_data = {
+        login: 'admin',
+        email: 'admin@localhost',
+        firstName: 'Administrator',
+        lastName: 'Administrator',
+        authorities: ['ROLE_USER', 'ROLE_ADMIN'],
+      };
     }
   }
 }
