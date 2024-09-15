@@ -14,8 +14,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid *ngIf="folder === 'usuarios'">
+    <ion-row>
+      <ion-col>Usuario</ion-col>
+      <ion-col>Email</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let user of users">
+      <ion-col>{{ user.name }}</ion-col>
+      <ion-col>{{ user.email }}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
