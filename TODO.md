@@ -12,6 +12,6 @@
 
 [x] Crear una aplicación progresiva en ionic que consuma una API del proyecto JHipste. 
 
-[ ] Convertir la aplicación Ionic en PWA permitiendo que pueda funcionar sin conexión.
+[x] Convertir la aplicación Ionic en PWA permitiendo que pueda funcionar sin conexión.
 
 [ ] Implementar un servidor de integración contínua (Jenkins) que lea el repositorio y genere una imagen docker de la aplicación (Dockerhub). 
