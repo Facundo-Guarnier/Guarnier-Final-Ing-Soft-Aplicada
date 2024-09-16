@@ -12,14 +12,9 @@ node {
                 sh "./mvnw -ntp clean -P-webapp"
             }
 
-            stage('IMPRIMIR PWD') {
-                sh "pwd"
-                sh "ls -la"
-            }
-
-            stage('check node') {
-                sh "node -v"
-            }
+            // stage('check node') {
+            //     sh "node -v"
+            // }
 
             stage('check maven') {
                 sh "mvnw -version"
