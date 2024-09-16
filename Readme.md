@@ -100,3 +100,22 @@ $ npm run start
 ```
 
 Web App: [``http://localhost:4200/``](http://localhost:4200/)
+
+
+## 04-jenkins
+
+### Comandos: 
+
+```bash
+# Inicializar Jenkins en el proyecto
+$ jhipster ci-cd
+
+# Imagen docker
+$ docker container run -d --name jenkins -p 8090:8080 -p 50000:50000 jenkins/jenkins
+
+
+```
+
+User: admin
+Password: 45047bbf915a42a2a110bdaa40d5e1ed
+Web App: [``http://localhost:8090/``](http://localhost:8090/)
