@@ -16,9 +16,9 @@ node {
             //     sh "node -v"
             // }
 
-            stage('check maven') {
-                sh "mvnw -version"
-            }
+            // stage('check maven') {
+            //     sh "mvnw -version"
+            // }
 
 
             stage('check npm') {
