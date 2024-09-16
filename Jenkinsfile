@@ -13,8 +13,8 @@ node {
             }
 
             stage('IMPRIMIR PWD') {
-                echo "PWD"
                 sh "pwd"
+                sh "ls -la"
             }
 
             stage('check node') {
