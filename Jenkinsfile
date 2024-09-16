@@ -35,12 +35,16 @@ node {
             archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
         }
 
-        def dockerImage
-        stage('publish docker') {
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+        stage('publish docker'){
+            withCredentials([
+                usernamePassword(
+                    credentialsId: 'dockerhub-login', 
+                    passwordVariable: 'DOCKER_REGISTRY_PWD', 
+                    usernameVariable: 'DOCKER_REGISTRY_USER'
+                )
+            ]) {
                 sh "./mvnw -ntp jib:build"
             }
-        
         }
     }
 }
