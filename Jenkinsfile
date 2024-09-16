@@ -20,6 +20,13 @@ node {
             //     sh "mvnw -version"
             // }
 
+            stage('nohttp') {
+                sh "./mvnw -ntp checkstyle:check"
+            }
+
+            stage('install tools') {
+                sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:install-node-and-npm@install-node-and-npm"
+            }
 
             stage('check npm') {
                 sh "npm -v"
@@ -33,13 +40,6 @@ node {
                 sh "docker-compose -v"
             }
 
-//             // stage('nohttp') {
-//             //     sh "./mvnw -ntp checkstyle:check"
-//             // }
-
-//             // stage('install tools') {
-//             //     sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:install-node-and-npm@install-node-and-npm"
-//             // }
 
 //             // stage('npm install') {
 //             //     sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
