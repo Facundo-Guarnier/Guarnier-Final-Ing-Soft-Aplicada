@@ -5,40 +5,38 @@ node {
             sh "java -version"
         }
 
-        stage('check node') {
-            sh "node -v"
-        }
+        dir('01-jhipster') {
 
-        stage('check maven') {
-            sh "mvnw -version"
-        }
-}
+            stage('clean') {
+                sh "chmod +x mvnw"
+                sh "./mvnw -ntp clean -P-webapp"
+            }
 
-//         stage('check npm') {
-//             sh "npm -v"
-//         }
+            stage('IMPRIMIR PWD') {
+                echo "PWD"
+                sh "pwd"
+            }
 
-//         stage('check docker') {
-//             sh "docker -v"
-//         }
+            stage('check node') {
+                sh "node -v"
+            }
 
-//         stage('check docker-compose') {
-//             sh "docker-compose -v"
-//         }
+            stage('check maven') {
+                sh "mvnw -version"
+            }
 
-//         //! Cambiar a la carpeta de JHipster
-//         dir('01-jhipster') {
 
-//             stage('clean') {
-//                 sh "chmod +x mvnw"
-//                 sh "./mvnw -ntp clean -P-webapp"
-//             }
+            stage('check npm') {
+                sh "npm -v"
+            }
 
-//             stage('IMPRIMIR PWD') {
-//                 echo "PWD"
-//                 sh "pwd"
-//             }
+            stage('check docker') {
+                sh "docker -v"
+            }
 
+            stage('check docker-compose') {
+                sh "docker-compose -v"
+            }
 
 //             // stage('nohttp') {
 //             //     sh "./mvnw -ntp checkstyle:check"
@@ -84,5 +82,5 @@ node {
 //             //     }
 //             // }
 //         }
-//     }
-// }
+    }
+}
