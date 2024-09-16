@@ -1,34 +1,18 @@
 #!/usr/bin/env groovy
 
-// node {
-pipeline {
-    agent any
-    
-    tools {
-        maven 'Maven 3.8.6'
-        nodejs 'Node 14.17.0'
-    }
-    
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+node {
+        stage('check java') {
+            sh "java -version"
         }
-    }
+
+        stage('check node') {
+            sh "node -v"
+        }
+
+        stage('check maven') {
+            sh "mvnw -version"
+        }
 }
-
-//         stage('check java') {
-//             sh "java -version"
-//         }
-
-//         stage('check node') {
-//             sh "node -v"
-//         }
-
-//         // stage('check maven') {
-//         //     sh "mvn -version"
-//         // }
 
 //         stage('check npm') {
 //             sh "npm -v"
