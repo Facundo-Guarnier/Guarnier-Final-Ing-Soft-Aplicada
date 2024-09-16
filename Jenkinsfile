@@ -5,12 +5,32 @@ node {
         checkout scm
     }
 
+    stage('check java') {
+        sh "java -version"
+    }
+
+    stage('check maven') {
+        sh "mvn -version"
+    }
+
+    stage('check node') {
+        sh "node -v"
+    }
+
+    stage('check npm') {
+        sh "npm -v"
+    }
+
+    stage('check docker') {
+        sh "docker -v"
+    }
+
+    stage('check docker-compose') {
+        sh "docker-compose -v"
+    }
+
     //! Cambiar a la carpeta de JHipster
     dir('01-jhipster') {
-
-        stage('check java') {
-            sh "java -version"
-        }
 
         stage('clean') {
             sh "chmod +x mvnw"
