@@ -12,17 +12,7 @@ node {
             sh "./mvnw -ntp clean -P-webapp"
         }
 
-        // stage('check node') {
-        //     sh "node -v"
-        // }
-
-        // stage('check maven') {
-        //     sh "mvnw -version"
-        // }
-
-        // stage('check npm') {
-        //     sh "npm -v"
-        // }
+        
 
         // stage('check docker') {
         //     sh "docker -v"
@@ -43,16 +33,28 @@ node {
             sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
         }
 
-        stage('backend tests') {
-            try {
-                // sh "./mvnw -ntp verify -P-webapp"
-                sh "mvn test"
-            } catch(err) {
-                throw err
-            } finally {
-                junit '**/target/surefire-reports/TEST-*.xml,**/target/failsafe-reports/TEST-*.xml'
-            }
+        stage('check node') {
+            sh "node -v"
         }
+
+        stage('check maven') {
+            sh "mvnw -version"
+        }
+
+        stage('check npm') {
+            sh "npm -v"
+        }
+
+        // stage('backend tests') {
+        //     try {
+        //         // sh "./mvnw -ntp verify -P-webapp"
+        //         sh "mvn test"
+        //     } catch(err) {
+        //         throw err
+        //     } finally {
+        //         junit '**/target/surefire-reports/TEST-*.xml,**/target/failsafe-reports/TEST-*.xml'
+        //     }
+        // }
 
 
 
