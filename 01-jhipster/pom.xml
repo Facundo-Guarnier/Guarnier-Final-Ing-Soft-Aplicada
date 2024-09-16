@@ -605,7 +605,7 @@
                         </from>
                         
                         <to>
-                            <image>Final-Ing-Soft-Aplicada:latest</image>
+                            <image>final-ing-soft-aplicada:latest</image>
                             <tags>
                                 <tag>${project.version}</tag>
                                 <tag>latest</tag>
