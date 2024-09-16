@@ -25,30 +25,11 @@ node {
 
         stage('npm install') {
             sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
+            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm@npm-install"
         }
 
-        // stage('backend tests') {
-        //     try {
-        //         sh "./mvnw -ntp verify -P-webapp"
-        //     } catch(err) {
-        //         throw err
-        //     } finally {
-        //         junit '**/target/surefire-reports/TEST-*.xml,**/target/failsafe-reports/TEST-*.xml'
-        //     }
-        // }
-
-        //stage('frontend tests') {
-        //    try {
-        //        sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test'"
-        //    } catch(err) {
-        //        throw err
-        //    } finally {
-        //        junit '**/target/test-results/TESTS-results-jest.xml'
-        //    }
-        //}
-
         stage('packaging') {
-            sh "npm install"
+            // sh "npm install"
             sh "chmod -R 755 node_modules"
             sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
             archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
@@ -56,9 +37,6 @@ node {
 
         def dockerImage
         stage('publish docker') {
-            // A pre-requisite to this step is to setup authentication to the docker registry
-            // https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#authentication-methods
-            //sh "./mvnw -ntp -Pprod verify jib:build"
             withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
                 sh "./mvnw -ntp jib:build"
             }
