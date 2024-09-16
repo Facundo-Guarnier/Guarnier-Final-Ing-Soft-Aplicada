@@ -9,13 +9,13 @@ node {
         sh "java -version"
     }
 
-    stage('check maven') {
-        sh "mvn -version"
-    }
-
     stage('check node') {
         sh "node -v"
     }
+
+    // stage('check maven') {
+    //     sh "mvn -version"
+    // }
 
     stage('check npm') {
         sh "npm -v"
