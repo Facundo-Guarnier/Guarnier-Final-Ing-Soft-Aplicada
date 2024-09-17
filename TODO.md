@@ -12,6 +12,6 @@
 
 [x] Convertir la aplicación Ionic en PWA permitiendo que pueda funcionar sin conexión.
 
-[ ] Hacer un deploy en docker.
+[x] Hacer un deploy en docker.
 
-[ ] Implementar un servidor de integración contínua (Jenkins) que lea el repositorio y genere una imagen docker de la aplicación (Dockerhub). 
+[x] Implementar un servidor de integración contínua (Jenkins) que lea el repositorio y genere una imagen docker de la aplicación (Dockerhub). 
