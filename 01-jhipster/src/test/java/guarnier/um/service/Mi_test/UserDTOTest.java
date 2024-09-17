@@ -1,8 +1,10 @@
-package guarnier.um.service.dto;
+package guarnier.um.service.Mi_test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import guarnier.um.domain.User;
+import guarnier.um.service.dto.UserDTO;
+
 import org.junit.jupiter.api.Test;
 
 class UserDTOTest {
