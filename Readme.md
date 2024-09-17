@@ -96,7 +96,7 @@ Ingresar en [``http://localhost:5601/app/discover``](http://localhost:5601/app/d
 
 ```bash
 # Inciar
-$ npm run start
+$ npm run start:dev
 ```
 
 Web App: [``http://localhost:4200/``](http://localhost:4200/)
