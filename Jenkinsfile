@@ -35,16 +35,12 @@ node {
             archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
         }
 
-        stage('publish docker'){
-            withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                sh """
-                    echo \$DOCKER_REGISTRY_PWD | docker login -u \$DOCKER_REGISTRY_USER --password-stdin
-                    ./mvnw -ntp jib:build \
-                        -Djib.to.image=docker.io/\$DOCKER_REGISTRY_USER/final-ing-soft-aplicada:latest \
-                        -Djib.to.auth.username=\$DOCKER_REGISTRY_USER \
-                        -Djib.to.auth.password=\$DOCKER_REGISTRY_PWD
-                """
+        def dockerImage
+            stage('publish docker') {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+                    sh "./mvnw -ntp jib:build"
             }
         }
+
     }
 }
