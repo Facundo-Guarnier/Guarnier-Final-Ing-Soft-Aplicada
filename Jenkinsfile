@@ -1,46 +1,51 @@
 #!/usr/bin/env groovy
 
 node {
-    
-    stage('checkout') {
-        checkout scm
+
+    stage('DOCKER CONTRASEÑA') {
+        sh 'echo $DOCKER_REGISTRY_PWD'
+        sh 'echo $DOCKER_REGISTRY_USER'
     }
 
-    stage('check java') {
-        sh "java -version"
-    }
+    // stage('checkout') {
+    //     checkout scm
+    // }
 
-    dir('01-jhipster') {
-        stage('clean') {
-            sh "chmod +x mvnw"
-            sh "./mvnw -ntp clean -P-webapp"
-        }
-        stage('nohttp') {
-            sh "./mvnw -ntp checkstyle:check"
-        }
+    // stage('check java') {
+    //     sh "java -version"
+    // }
 
-        stage('install tools') {
-            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:install-node-and-npm@install-node-and-npm"
-        }
+    // dir('01-jhipster') {
+    //     stage('clean') {
+    //         sh "chmod +x mvnw"
+    //         sh "./mvnw -ntp clean -P-webapp"
+    //     }
+    //     stage('nohttp') {
+    //         sh "./mvnw -ntp checkstyle:check"
+    //     }
 
-        stage('npm install') {
-            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
-            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm@npm-install"
-        }
+    //     stage('install tools') {
+    //         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:install-node-and-npm@install-node-and-npm"
+    //     }
 
-        stage('packaging') {
-            // sh "npm install"
-            sh "chmod -R 755 node_modules"
-            sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
-            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-        }
+    //     stage('npm install') {
+    //         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
+    //         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm@npm-install"
+    //     }
 
-        def dockerImage
-            stage('publish docker') {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                    sh "./mvnw -ntp jib:build"
-            }
-        }
+    //     stage('packaging') {
+    //         // sh "npm install"
+    //         sh "chmod -R 755 node_modules"
+    //         sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
+    //         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+    //     }
 
-    }
+    //     def dockerImage
+    //         stage('publish docker') {
+    //             withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
+    //                 sh "./mvnw -ntp jib:build"
+    //         }
+    //     }
+
+    // }
 }
