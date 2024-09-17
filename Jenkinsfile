@@ -39,7 +39,8 @@ node {
         def dockerImage
             stage('publish docker') {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-login', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                    echo "Usando credenciales de Docker Hub para usuario: $DOCKER_REGISTRY_USER"
+                    sh 'echo $DOCKER_REGISTRY_PWD'
+                    sh 'echo $DOCKER_REGISTRY_USER'
                     sh "./mvnw -ntp jib:build"
             }
         }
