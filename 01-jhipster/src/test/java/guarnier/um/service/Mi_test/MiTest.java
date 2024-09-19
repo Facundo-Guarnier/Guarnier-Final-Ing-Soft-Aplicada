@@ -14,7 +14,7 @@ import guarnier.um.service.dto.UserDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class MiTest {
 
     private User user;
 

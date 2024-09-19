@@ -47,7 +47,7 @@ $ npm run start:win
 $ npm run start:lin
 
 # Test Backend
-$ mvn -Dtest=UserDTOTest test
+$ mvn -Dtest=MiTest test
 
 # Test Frontend
 $ npm run test

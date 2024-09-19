@@ -3,7 +3,7 @@
 [x] Crear dos test de unidad. 
     R: Test en UserDTOTest.
 
-[ ] Crear tres test E2E en Cypress. Algunos de los test deberán hacer el login utilanzo la API y para luego probar alguna funcionalidad.
+[x] Crear tres test E2E en Cypress. Algunos de los test deberán hacer el login utilanzo la API y para luego probar alguna funcionalidad.
 
 [x] Implementar un servidor de logs (ELK) que tome los logs en docker.
     R: 01-jhipster\src\main\java\guarnier\um\web\rest\UserResource.java -> getAllUsers
