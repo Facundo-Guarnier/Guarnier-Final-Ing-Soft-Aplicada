@@ -22,7 +22,7 @@ Crear una aplicación donde se apliquen los conceptos aprendidos durante el curs
 ## 01-jhipster
 
 <div align="center">
-  <img src="https://cdn.simpleicons.org/jhipster/326690" alt="JHipster Logo" width="80">
+  <img src="https://cdn.simpleicons.org/jhipster" alt="JHipster Logo" width="80">
 </div>
 
 ### Dependencias:
@@ -56,10 +56,13 @@ $ npm run test
 $ npm run cypress
 ```
 
+Web App: [``http://localhost:8080/``](http://localhost:8080/)
+
+
 ## 02-elk-docker
 
 <div align="center">
-    <img src="https://cdn.simpleicons.org/elastic/005571" alt="ELK Logo" width="80">
+    <img src="https://cdn.simpleicons.org/elastic" alt="ELK Logo" width="80">
 </div>
 
 ### Dependencias:
@@ -85,7 +88,7 @@ Ingresar en [``http://localhost:5601/app/discover``](http://localhost:5601/app/d
 ## 03-pwa-ionic-angular
 
 <div align="center">
-    <img src="https://cdn.simpleicons.org/ionic/3880FF" alt="Ionic Logo" width="80">
+    <img src="https://cdn.simpleicons.org/ionic" alt="Ionic Logo" width="80">
 </div>
 
 ### Dependencias:
@@ -103,6 +106,10 @@ Web App: [``http://localhost:4200/``](http://localhost:4200/)
 
 
 ## 04-jenkins
+<div align="center">
+    <img src="https://cdn.simpleicons.org/jenkins" alt="jenkins Logo" width="80">
+</div>
+
 
 ### Comandos: 
 
