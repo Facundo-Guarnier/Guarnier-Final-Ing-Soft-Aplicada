@@ -1,4 +1,4 @@
-package guarnier.um.service.Mi_test;
+package guarnier.um.miTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,7 +9,6 @@ import java.util.Set;
 
 import guarnier.um.domain.Authority;
 import guarnier.um.domain.User;
-import guarnier.um.service.dto.UserDTO;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

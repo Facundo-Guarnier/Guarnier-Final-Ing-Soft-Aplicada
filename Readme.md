@@ -56,7 +56,7 @@ $ npm run test
 $ npm run cypress
 ```
 
-Web App: [``http://localhost:8080/``](http://localhost:8080/)
+* Web App: [``http://localhost:8080/``](http://localhost:8080/)
 
 
 ## 02-elk-docker
@@ -81,9 +81,9 @@ $ docker-compose up
 $ curl -D- -X POST -u elastic:changeme 'http://localhost:9200/_license/start_basic?acknowledge=true'
 ```
 
-Web App: [``http://localhost:5601``](http://localhost:5601)
-Archivo con logs personalizados: ``01-jhipster\src\main\java\guarnier\um\web\rest\UserResource.java`` -> ``getAllUsers()``
-Ingresar en [``http://localhost:5601/app/discover``](http://localhost:5601/app/discover#/?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=(columns:!(),filters:!(),index:'logs-*',interval:auto,query:(language:kuery,query:'LOG%20EN%20GET%20ALL%20USERS'),sort:!(!('@timestamp',desc)))) y buscar ``LOG EN GET ALL USERS``
+* Web App: [``http://localhost:5601``](http://localhost:5601)
+* Archivo con logs personalizados: ``01-jhipster\src\main\java\guarnier\um\web\rest\UserResource.java`` -> ``getAllUsers()``
+* Ingresar en [``http://localhost:5601/app/discover``](http://localhost:5601/app/discover#/?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=(columns:!(),filters:!(),index:'logs-*',interval:auto,query:(language:kuery,query:'LOG%20EN%20GET%20ALL%20USERS'),sort:!(!('@timestamp',desc)))) y buscar ``LOG EN GET ALL USERS``
 
 ## 03-pwa-ionic-angular
 
@@ -102,7 +102,7 @@ Ingresar en [``http://localhost:5601/app/discover``](http://localhost:5601/app/d
 $ npm run start:dev
 ```
 
-Web App: [``http://localhost:4200/``](http://localhost:4200/)
+* Web App: [``http://localhost:4200/``](http://localhost:4200/)
 
 
 ## 04-jenkins
@@ -123,6 +123,6 @@ $ docker container run -d --name jenkins -p 8090:8080 -p 50000:50000 jenkins/jen
 
 ```
 
-User: admin
-Password: 45047bbf915a42a2a110bdaa40d5e1ed
-Web App: [``http://localhost:8090/``](http://localhost:8090/)
+* User: admin
+* Password: 45047bbf915a42a2a110bdaa40d5e1ed
+* Web App: [``http://localhost:8090/``](http://localhost:8090/)
